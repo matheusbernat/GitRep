@@ -1,0 +1,79 @@
+"SEMINARIE 11"
+"""
+Hjälpmedel: textbok, anteckningar, pennor, tomma papper, python.org(dokumentationsdelen)
+Kriterier: samma namn på funktioner, självbeskrivande namn, strukturererad, följa kraven, kolla upp körexemplen i uppgiften, generell lösning.
+"""
+# EXEMPELTENTA
+from random import randint
+
+# Uppgift 1
+
+def id(name, sirname):
+    return name[:3].lower() + sirname[:2].lower() + str(randint(100, 999))
+
+
+def replace_i(old_elem, new_elem, lst):
+    new_lst = []
+    for elem in lst:
+        if elem == old_elem:
+            new_lst.append(new_elem)
+        else:
+            new_lst.append(elem)
+    return new_lst
+
+
+def replace_r(old_elem, new_elem, lst):
+    if not lst:
+        return []
+    if lst[0] == old_elem:
+        return [new_elem] + replace_r(old_elem, new_elem, lst[1:])
+    else:
+        return [lst[0]] + replace_r(old_elem, new_elem, lst[1:])
+
+def collector(func, lst):
+    if not lst:
+        return []
+    elif isinstance(lst[0], list):
+        return collector(func, lst[0]) + collector(func, lst[1:])
+    elif func(lst[0]):
+        return [lst[0]] + collector(func, lst[1:])
+    else:
+        return collector(func, lst[1:])
+
+    
+def numbers_in_interval(lower_bound, upper_bound, lst):
+    return collector((lambda x: isinstance(x, int) and \
+                      lower_bound<= x <= upper_bound), lst)
+
+
+def make_move(board, piece, position):
+    if row_piece(position[0], position[1]) != "empty":
+        return change_piece(piece, position[1], position[0])
+    return board
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+

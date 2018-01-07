@@ -1,0 +1,19 @@
+"SEMINARIE 9"
+
+dictio = {"A":["B", "C"],
+          "B":["A", "C"],
+          "C":["A", "B", "D", "G"],
+          "G":["C", "H"],
+          "H":["G"],
+          "D":["C", "E", "F"],
+          "E":["D", "F"],
+          "F":["E", "D"]}
+
+def check_euler(table):
+    uneven_numbers = 0
+    for key in table:
+        if len(table[key]) % 2 == 1:
+            uneven_numbers += 1
+    return uneven_numbers == 0 or uneven_numbers == 2
+            
+        
