@@ -19,9 +19,6 @@ def check_euler(table):
             uneven_numbers += 1
     return uneven_numbers == 0 or uneven_numbers == 2
 
-
-
-
 # SUDOKU
 
 sudoku_board = [

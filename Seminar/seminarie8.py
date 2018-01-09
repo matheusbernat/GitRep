@@ -33,17 +33,19 @@ def check_2(string):
     else:
         return False
 
+
+########################################################################
+
+dictio = {'Ada': (['Alan', 'Herbert'], 36),
+          'Alan': ([], 41),
+          'Herbert': (['Charles'], 84)}
+"""
 def oldest_branch(graph, person):
     sum = 0
     for child in graph[person][0]:
         oldest_branch(graph, child[0][0])
         sum += child[1]
-    return sum
-
-dictio = {'Ada': (['Alan', 'Herbert'], 36),
-          'Alan': ([], 41),
-          'Herbert': (['Charles'], 84)}
-
+    return sum"""
 
 def get_children(g, person):
     return g[person][0]

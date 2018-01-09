@@ -76,13 +76,6 @@ def check_combinations(board, piece, posseq):
 
 test_graph = {'a': ('b', 'd'), 'b': ('c'), 'c': ('d'), 'd': ('b', 'e'), 
                 'e': ('f'), 'f': ()}
-"""
-def has_loop(node, graph):
-    if not graph[node]:
-        return False
-    else:
-        return has_loop(graph[node][0], graph) or has_loop(graph[node][1:], graph)
-"""
 
 def has_loop(start_node, graph):
     def loop_check(node, visited):
@@ -109,33 +102,6 @@ def has_loop(start_node, graph):
 
 
     
-"""
-WINNING_COMBINATIONS = ( \
-    insert_position(make_position(1, 1), \
-      insert_position(make_position(2, 2), \
-        insert_position(make_position(3, 3), make_posseq()))),
-    insert_position(make_position(3, 1), \
-      insert_position(make_position(2, 2), \
-        insert_position(make_position(1, 3), make_posseq()))),
-    insert_position(make_position(1, 1), \
-      insert_position(make_position(1, 2), \
-        insert_position(make_position(1, 3), make_posseq()))),
-    insert_position(make_position(2, 1), \
-      insert_position(make_position(2, 2), \
-        insert_position(make_position(2, 3), make_posseq()))),
-    insert_position(make_position(3, 1), \
-      insert_position(make_position(3, 2), \
-        insert_position(make_position(3, 3), make_posseq()))),
-    insert_position(make_position(1, 1), \
-      insert_position(make_position(2, 1), \
-        insert_position(make_position(3, 1), make_posseq()))),
-    insert_position(make_position(1, 2), \
-      insert_position(make_position(2, 2), \
-        insert_position(make_position(3, 2), make_posseq()))),
-    insert_position(make_position(1, 3), \
-      insert_position(make_position(2, 3), \
-        insert_position(make_position(3, 3), make_posseq()))) )
-"""
 
 
 

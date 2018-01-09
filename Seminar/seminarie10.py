@@ -3,6 +3,8 @@
 "abstraktionslager" "-" "användbar när man skriver stora program"
 "abstrakt, prmitiva"
 
+###################### GRAFUPPGIFT ######################
+
 def sum_all(seq):
     if not seq:
         return 0
@@ -10,7 +12,8 @@ def sum_all(seq):
         return sum_all(seq[0]) + sum_all(seq[1:])
     else:
         return seq[0] + sum_all(seq[1:])
-    
+
+"""
 def sum_it(seq):
     sum = 0
     if isinstance
@@ -18,4 +21,4 @@ def sum_it(seq):
         part = sum_all(elem)
         sum += part
     return sum
-
+"""
