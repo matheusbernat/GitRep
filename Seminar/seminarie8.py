@@ -36,29 +36,6 @@ def check_2(string):
 
 ########################################################################
 
-dictio = {'Ada': (['Alan', 'Herbert'], 36),
-          'Alan': ([], 41),
-          'Herbert': (['Charles'], 84)}
-"""
-def oldest_branch(graph, person):
-    sum = 0
-    for child in graph[person][0]:
-        oldest_branch(graph, child[0][0])
-        sum += child[1]
-    return sum"""
 
-def get_children(g, person):
-    return g[person][0]
-    
-def get_age(g, person):
-    return g[person][1]
-
-def oldest_branch(g, p):
-    oldest = 0
-    for child in get_children(g, p):
-        age = oldest_branch(g, child)
-        if age > oldest:
-            oldest = age
-    return oldest + get_age(g, p)
 
     
