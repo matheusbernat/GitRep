@@ -26,7 +26,7 @@ def column_facit(s, size):
     return res
 
 # Uppgift 5
-def distance_facit(tree, start, end):
+def distance_facit(tree, start, goal):
     def walk(node, dist):
         if node == goal:
             return dist
@@ -36,7 +36,7 @@ def distance_facit(tree, start, end):
                 return -1
             else:
                 for tup in children:
-                    res = walk(get_node(tup), d + get_dist(tup))
+                    res = walk(get_node(tup), dist + get_dist(tup))
                     if res > 0:
                         return res
                     return -1
@@ -102,7 +102,7 @@ def find_i(seq, elem):
 
 def find_i_facit(seq, elem):
     for i in range(len(seq)):
-        if seq[i] == elem):
+        if seq[i] == elem:
             return i
     return -1
     
@@ -155,7 +155,7 @@ def contain_i(small, big):
                 message += big[i]
                 big = big[i:]
                 break
-    return message == small:
+    return message == small
 
 # OR:
 
@@ -199,6 +199,22 @@ def distance(tree, start, end):
             for e in tree[get_node(tup)]:
                 travelled += get_dist(e)
         return travelled
+
+def distance_2(tree, start, goal):
+  def walk(pos, d):
+    if pos == goal:
+      return d
+    else:
+      children = tree[pos]
+      if not children:
+        return -1
+      else:
+        for pair in children:
+          res = walk(pair[0], d+pair[1])
+          if res > 0:
+            return res
+        return -1
+  return walk(start, 0)
 
 # UPPGIFT 6
 

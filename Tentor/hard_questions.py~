@@ -1,0 +1,13 @@
+####################################
+# SVÅRARE UPPGIFTER - 5 o 6
+####################################
+
+# Grafuppgifter
+
+# Exempeltenta
+
+test_graph = {'a': ('b', 'd'), 'b': ('c'), 'c': ('d'), 'd': ('b', 'e'), 
+                'e': ('f'), 'f': ()}
+
+def has_loop(node, graph):
+    
